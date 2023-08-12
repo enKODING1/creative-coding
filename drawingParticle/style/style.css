@@ -1,0 +1,34 @@
+body {
+  background-color: black;
+}
+
+canvas {
+  position: relative;
+  z-index: 0;
+}
+
+.controller {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  margin-top: 20px;
+  margin-left: 20px;
+  background-color: white;
+  width: 250px;
+  height: 120px;
+  border-radius: 20px;
+}
+
+.bar {
+  margin-left: 10px;
+  display: flex;
+  width: 100%;
+  height: 70%;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.range {
+  width: 70%;
+}

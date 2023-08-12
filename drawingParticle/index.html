@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../common/style.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Drawing Particle</title>
+  </head>
+
+  <body>
+    <div class="controller">
+      <div class="bar">
+        <div>
+          <input
+            id="particle"
+            class="range"
+            type="range"
+            value="0"
+            min="1"
+            max="100"
+          />
+          <span class="val">원:</span>
+        </div>
+        <div>
+          <input
+            id="particle_line"
+            class="range"
+            type="range"
+            value="0"
+            min="1"
+            max="100"
+          />
+          <span class="val">라인:</span>
+        </div>
+        <div>
+          <input id="particle_effect" type="checkbox" />
+          <span class="val">효과 꺼짐</span>
+        </div>
+      </div>
+    </div>
+    <script src="./js/app.js" type="module"></script>
+  </body>
+</html>
