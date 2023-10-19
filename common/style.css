@@ -17,6 +17,7 @@ body {
   overflow: hidden;
   padding: 0;
   margin: 0;
+  font-family: 'Leon Sans', sans-serif;
 }
 canvas {
   width: 100%;
