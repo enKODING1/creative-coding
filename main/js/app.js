@@ -28,12 +28,11 @@ class App {
     }
 
     const ITEM_LIST = {
-      'POINTER\nWRAPPER': '../pointerWrapper/index.html',
+      SPACE: '../space/index.html',
       CRASH: '../crash/index.html',
       'CRASH\nBLOCK': '../crashBlock/index.html',
       GRAVITY: '../gravity/index.html',
       'DRAWING\nPARTICLE': '../drawingParticle/index.html',
-      SPACE: '../space/index.html',
       'ROTATION\nCARD': '../rotationCard/index.html',
       'POINTER\nTRACKING': '../pointerTracking/index.html',
       'METRONOME\nNUMBER': '../metronomeNumber/index.html',
