@@ -1,5 +1,5 @@
 import { Ball } from './Ball.js'
-import { Polygon } from './polygon.js'
+import { Polygon } from './Polygon.js'
 
 class App {
   constructor() {

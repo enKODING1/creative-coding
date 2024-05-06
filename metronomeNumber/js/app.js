@@ -1,4 +1,4 @@
-import { Ball } from './ball.js'
+import { Ball } from './Ball.js'
 
 class App {
   constructor() {

@@ -1,4 +1,4 @@
-import { Polygon } from './polygon.js'
+import { Polygon } from './Polygon.js'
 
 class App {
   constructor() {
