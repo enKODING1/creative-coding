@@ -13,45 +13,45 @@ class App {
     window.requestAnimationFrame(this.animate.bind(this))
 
     //bar
-    this.bar_width = 150
-    this.bar_height = 80
-    this.bar_x = window.innerWidth / 2 - this.bar_width / 2
-    this.bar_y = window.innerHeight - this.bar_height - 100
-    this.bar_range = this.bar_x
-    this.bar_yrange = this.bar_y
+    this.barWidth = 150
+    this.barHeight = 80
+    this.barX = window.innerWidth / 2 - this.barWidth / 2
+    this.barY = window.innerHeight - this.barHeight - 100
+    this.barRange = this.barX
+    this.barYrange = this.barY
 
     this.bar = new Bar(
-      this.bar_x,
-      this.bar_y,
-      this.bar_width,
-      this.bar_height,
-      this.bar_range,
-      this.bar_yrange
+      this.barX,
+      this.barY,
+      this.barWidth,
+      this.barHeight,
+      this.barRange,
+      this.barYrange
     )
     window.addEventListener('keydown', (e) => {
       //left : 37 , right : 39 ,top : 38 , bottom: 40
-      let status = this.bar.update(this.bar_range, this.bar_yrange)
+      let status = this.bar.update(this.barRange, this.barYrange)
       if (status == 'minX') {
-        this.bar_range = 0
+        this.barRange = 0
       } else if (status == 'maxX') {
-        this.bar_range = window.innerWidth - this.bar_width
+        this.barRange = window.innerWidth - this.baWwidth
       } else if (status == 'minY') {
-        this.bar_yrange = 0
+        this.barYrange = 0
       } else if (status == 'maxY') {
-        this.bar_yrange = window.innerHeight - this.bar_height
+        this.barYrange = window.innerHeight - this.barHeight
       }
 
       if (e.keyCode == 37) {
-        this.bar_range -= 20
+        this.barRange -= 20
       } else if (e.keyCode == 39) {
-        this.bar_range += 20
+        this.barRange += 20
       } else if (e.keyCode == 38) {
-        this.bar_yrange -= 20
+        this.barYrange -= 20
       } else if (e.keyCode == 40) {
-        this.bar_yrange += 20
+        this.barYrange += 20
       }
 
-      this.bar.update(this.bar_range, this.bar_yrange)
+      this.bar.update(this.barRange, this.barYrange)
     })
 
     //shape

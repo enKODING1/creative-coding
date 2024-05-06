@@ -13,9 +13,9 @@ class App {
 
     window.requestAnimationFrame(this.animate.bind(this))
     this.ball = new Array()
-    let ball_count = 100
+    let ballCount = 100
 
-    for (let i = 0; i < ball_count; i++) {
+    for (let i = 0; i < ballCount; i++) {
       // let r = Math.floor(Math.random() * 255);
       // let g = Math.floor(Math.random() * 255);
       // let b = Math.floor(Math.random() * 255);

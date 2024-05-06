@@ -3,8 +3,8 @@ document.body.appendChild(canvas)
 const ctx = canvas.getContext('2d')
 
 const particles = document.querySelector('#particle')
-const particle_lined = document.querySelector('#particle_line')
-const particle_effect = document.querySelector('#particle_effect')
+const particleLined = document.querySelector('#particle_line')
+const particleEffect = document.querySelector('#particle_effect')
 let val = document.querySelectorAll('.val')
 let count = 0
 
@@ -12,20 +12,20 @@ canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 const particleArray = []
 let hue = 0
-let particle_num = 0
-let particle_line = 0
+let particleNum = 0
+let particleLine = 0
 let particle = false
 
 particles.onchange = (e) => {
   val[0].innerHTML = `원:${e.target.value}`
-  particle_num = e.target.value
+  particleNum = e.target.value
 }
-particle_lined.onchange = (e) => {
+particleLined.onchange = (e) => {
   val[1].innerHTML = `라인:${e.target.value}`
-  particle_line = e.target.value
+  particleLine = e.target.value
 }
 
-particle_effect.onchange = (e) => {
+particleEffect.onchange = (e) => {
   count++
   if (count % 2 == 0) {
     val[2].innerHTML = `효과 꺼짐`
@@ -48,7 +48,7 @@ const mouse = {
 canvas.addEventListener('click', (event) => {
   mouse.x = event.x
   mouse.y = event.y
-  for (let i = 0; i < particle_num; i++) {
+  for (let i = 0; i < particleNum; i++) {
     particleArray.push(new Particle())
   }
 })
@@ -58,7 +58,7 @@ canvas.addEventListener('pointermove', (event) => {
   mouse.y = event.y
 
   // ctx.clearRect(0,0,canvas.width,canvas.height);
-  for (let i = 0; i < particle_num; i++) {
+  for (let i = 0; i < particleNum; i++) {
     particleArray.push(new Particle())
   }
 })
@@ -102,7 +102,7 @@ function handleParticles() {
       const dx = particleArray[i].x - particleArray[j].x
       const dy = particleArray[i].y - particleArray[j].y
       const distance = Math.sqrt(dx * dx + dy * dy)
-      if (distance < particle_line) {
+      if (distance < particleLine) {
         ctx.beginPath()
         ctx.strokeStyle = particleArray[i].color
         // ctx.strokeStyle = 'white';

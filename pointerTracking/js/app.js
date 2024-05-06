@@ -16,7 +16,7 @@ class App {
     this.row = 20
     this.col = 15
 
-    this.total_size = this.row * this.col
+    this.totalSize = this.row * this.col
 
     for (let i = 1; i < this.col + 1; i++) {
       for (let j = 1; j < this.row + 1; j++) {
@@ -72,7 +72,7 @@ class App {
     window.requestAnimationFrame(this.animate.bind(this))
     this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
 
-    for (let i = 0; i < this.total_size; i++) {
+    for (let i = 0; i < this.totalSize; i++) {
       this.bar[i].update(this.x, this.y)
       this.bar[i].draw(this.ctx)
       this.connect(i)

@@ -10,13 +10,13 @@ class App {
     window.addEventListener('resize', this.resize.bind(this))
     this.resize()
 
-    this.ball_count = Math.floor(Math.random() * 30) + 8
+    this.ballCount = Math.floor(Math.random() * 30) + 8
     this.ball = new Array()
     let x = 100
     let y = 100
     let radius = 3
     let speed = 2
-    for (let i = 0; i < this.ball_count; i++) {
+    for (let i = 0; i < this.ballCount; i++) {
       let r = Math.floor(Math.random() * 255)
       let g = Math.floor(Math.random() * 255)
       let b = Math.floor(Math.random() * 255)
@@ -27,7 +27,7 @@ class App {
       this.ball.push(new Ball(x, y, radius, speed, color))
     }
 
-    const ITEM_LIST = {
+    const itemList = {
       SPACE: '../space/index.html',
       CRASH: '../crash/index.html',
       'CRASH\nBLOCK': '../crashBlock/index.html',
@@ -42,7 +42,7 @@ class App {
 
     this.content = document.getElementById('content')
 
-    this.item = new Item(this.content, ITEM_LIST)
+    this.item = new Item(this.content, itemList)
     this.item.create()
 
     this.mouseDown = false
@@ -73,7 +73,7 @@ class App {
 
     //canvas구간
     this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
-    // for(let i =0 ; i <this.ball_count; i++){
+    // for(let i =0 ; i <this.ballCount; i++){
     //     this.ball[i].animate(this.ctx,window.innerWidth,window.innerHeight);
     // }
     for (let i = 0; i < this.ball.length; i++) {
