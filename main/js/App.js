@@ -9,7 +9,7 @@ class App {
     this.ctx = this.canvas.getContext('2d')
     window.addEventListener('resize', this.resize.bind(this))
     this.resize()
-
+    this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1
     this.ballCount = Math.floor(Math.random() * 30) + 8
     this.ball = new Array()
     let x = 100
@@ -29,6 +29,7 @@ class App {
 
     const itemList = {
       SPACE: '../space/index.html',
+      'CLOCK OF CLOCK': '../clock/index.html',
       CRASH: '../crash/index.html',
       'CRASH\nBLOCK': '../crashBlock/index.html',
       GRAVITY: '../gravity/index.html',
@@ -38,6 +39,7 @@ class App {
       'METRONOME\nNUMBER': '../metronomeNumber/index.html',
       WAVE: '../wave/index.html',
       FORCE: '../force/index.html',
+      
     }
 
     this.content = document.getElementById('content')
@@ -119,8 +121,12 @@ class App {
   }
 
   resize() {
-    this.canvas.width = window.innerWidth
-    this.canvas.height = window.innerHeight
+    this.stageWdith = document.body.clientWidth
+    this.stageHeight = document.body.clientHeight
+
+    this.canvas.width = this.stage * this.pixelRatio
+    this.canvas.height = this.stageHeight * this.pixelRatio
+    this.ctx.scale(this.pixelRatio, this.pixelRatio)
   }
 }
 

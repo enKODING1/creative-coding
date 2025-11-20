@@ -1,0 +1,63 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.main{
+  width: 90%;
+  height: 100vh;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  /* border: 1px solid red; */
+}
+
+.hour, .min, .sec{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* justify-content: center; */
+  align-items: center;
+  
+  place-items: center;
+}
+
+.clock-container {
+  width: 10rem;
+  display: grid;
+  grid-template: repeat(6, 1fr) / repeat(4, 1fr);
+  gap: 0.125rem;
+}
+
+.mini-clock {
+  position: relative;
+  /* border: 3px solid blanchedalmond; */
+  background-color: white;
+  border-radius: 2rem;
+  width: 3rem;
+  height: 3rem;
+  box-shadow:
+  inset 0 2px 4px rgba(0, 0, 0, 0.35),   /* 위쪽에서 눌러준 느낌 */
+  inset 0 -2px 3px rgba(255, 255, 255, 0.162); /* 아래쪽의 밝은 반사 */
+
+}
+
+.line {
+  position: absolute;
+  width: 50%;
+  height: 0.15rem;
+  top: 50%;
+  left: 50%;
+  transform-origin: center left;
+  translate: 0% -50%;
+  transition: rotate 250ms;
+  background: rgb(79, 79, 79);
+}
+
+.line:nth-child(1) {
+  rotate: 135deg;
+}
+.line:nth-child(2) {
+  rotate: 135deg;
+}
+
