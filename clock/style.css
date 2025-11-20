@@ -23,6 +23,7 @@ body {
 }
 
 .clock-container {
+  /* width: 10rem; */
   width: 10rem;
   display: grid;
   grid-template: repeat(6, 1fr) / repeat(4, 1fr);
@@ -50,7 +51,7 @@ body {
   left: 50%;
   transform-origin: center left;
   translate: 0% -50%;
-  transition: rotate 250ms;
+  transition: rotate 600ms;
   background: rgb(79, 79, 79);
 }
 
