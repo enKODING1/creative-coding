@@ -1,9 +1,13 @@
+html {
+  font-size: clamp(4px, min(1vw, 2vh), 16px);
+}
+
 body {
   width: 100%;
   height: 100%;
 }
 
-.main{
+.main {
   width: 90%;
   height: 100vh;
   margin: auto;
@@ -13,12 +17,14 @@ body {
   /* border: 1px solid red; */
 }
 
-.hour, .min, .sec{
+.hour,
+.min,
+.sec {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   /* justify-content: center; */
   align-items: center;
-  
+
   place-items: center;
 }
 
@@ -38,9 +44,8 @@ body {
   width: 3rem;
   height: 3rem;
   box-shadow:
-  inset 0 2px 4px rgba(0, 0, 0, 0.35),   /* 위쪽에서 눌러준 느낌 */
-  inset 0 -2px 3px rgba(255, 255, 255, 0.162); /* 아래쪽의 밝은 반사 */
-
+    inset 0 2px 4px rgba(0, 0, 0, 0.35),
+    inset 0 -2px 3px rgba(255, 255, 255, 0.162); /* 아래쪽의 밝은 반사 */
 }
 
 .line {
@@ -61,4 +66,3 @@ body {
 .line:nth-child(2) {
   rotate: 135deg;
 }
-
