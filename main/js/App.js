@@ -7,9 +7,9 @@ class App {
     this.canvas = document.createElement('canvas')
     document.body.appendChild(this.canvas)
     this.ctx = this.canvas.getContext('2d')
+    this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1
     window.addEventListener('resize', this.resize.bind(this))
     this.resize()
-    this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1
     this.ballCount = Math.floor(Math.random() * 30) + 8
     this.ball = new Array()
     let x = 100
@@ -39,7 +39,6 @@ class App {
       'METRONOME\nNUMBER': '../metronomeNumber/index.html',
       WAVE: '../wave/index.html',
       FORCE: '../force/index.html',
-      
     }
 
     this.content = document.getElementById('content')
@@ -56,7 +55,7 @@ class App {
       window.innerWidth / 2,
       window.innerHeight - window.innerHeight / 10,
       window.innerHeight / 20,
-      Math.floor(Math.random() * 6 + 3)
+      Math.floor(Math.random() * 6 + 3),
     )
 
     window.addEventListener('pointerdown', this.onDown.bind(this))
@@ -98,7 +97,7 @@ class App {
       this.ctx,
       this.moveX,
       window.innerWidth,
-      window.innerHeight
+      window.innerHeight,
     )
   }
 
@@ -121,10 +120,10 @@ class App {
   }
 
   resize() {
-    this.stageWdith = document.body.clientWidth
-    this.stageHeight = document.body.clientHeight
+    this.stageWidth = window.innerWidth
+    this.stageHeight = window.innerHeight
 
-    this.canvas.width = this.stage * this.pixelRatio
+    this.canvas.width = this.stageWidth * this.pixelRatio
     this.canvas.height = this.stageHeight * this.pixelRatio
     this.ctx.scale(this.pixelRatio, this.pixelRatio)
   }
