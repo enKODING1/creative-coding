@@ -1,4 +1,12 @@
 /* main content */
+/* 카드를 손가락으로 밀 때 페이지 자체가 끌리거나 튕기지 않게 한다 */
+html,
+body {
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
 #content {
   position: absolute;
   width: 100%;
@@ -18,6 +26,7 @@
   border-radius: 10px;
   margin-left: 5%;
   vertical-align: middle;
+  overflow: hidden;
 }
 
 .item_title_box {
@@ -27,10 +36,13 @@
   padding-top: 5%;
 }
 
+/* 카드 너비(25vh)에 맞춰 글자 크기를 줄인다. 가장 긴 단어 METRONOME 이 카드 안에 들어가는 크기다 */
 .item_title {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: min(24px, 3vh);
   white-space: normal;
+  overflow-wrap: anywhere;
   text-align: center;
 }
 
